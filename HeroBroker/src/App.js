@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+
+  const [items, setItems] = useState([])
+  const [heroes, setHeroes] = useState([])
+  const [missions, setMissions] = useState([])
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="header">Header</div>
       </header>
+      <body className="body">
+        <div>Body</div>
+        <div className="container"></div>
+      </body>
+      <footer className="footer">
+        <div>Footer</div>
+      </footer>
     </div>
   );
 }
