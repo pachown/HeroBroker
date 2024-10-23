@@ -1,10 +1,13 @@
-//generate items based on difficulty modifier and item find
+//generate one item based on difficulty
+//TODO itemFind modifier
 
 export function generateItem(difficulty, itemFind) {
-  //get a random item type from itemTypes
-  //roll a number of stats by getting a range from diffficultyToMods and randomly finding how many mods with the findRandom function
 
   var itemTypes = [
+    "twoHandWeapon",
+    "oneHandWeapon",
+    "shield",
+    "weapon",
     "helmet",
     "body",
     "boot",
@@ -94,6 +97,9 @@ function addStat(itemType) {
     // inventorySpace: [1, 1],
   };
   var itemMultipliers = {
+    twoHandWeapon: 10,
+    oneHandWeapon: 6,
+    shield: 4,
     helmet: 5,
     body: 10,
     boot: 3,
