@@ -1,10 +1,12 @@
 // HeroBroker takes information about levels, such as their grid layout, difficulty, rewards, enemies, and lore. It then creates a level object with this information.
 import { generateGrid } from "./grid.js";
 
+let tempGrid = generateGrid()
+console.log(tempGrid, "here");
 let test = [
   {
     name: "Test Level",
-    grid: generateGrid(),
+    grid: tempGrid,
     difficulty: 1,
     description: "This is a test level.",
     rewards: {

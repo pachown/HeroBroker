@@ -77,9 +77,8 @@ function generateGrid(min = 20, max = 80)  {
         }
 
         // Output grid as string
-        const gridString = grid.map(row => row.join('')).join('\n');
-        const gridInfo = [gridString, grid];
-        console.log(gridInfo);
-        return gridString;
+        // const gridString = grid.map(row => row.join('')).join('\n');
+        // const gridInfo = [gridString, grid];
+        return grid;
     }
 export { generateGrid };

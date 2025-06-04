@@ -150,7 +150,6 @@ function sumModValues(modArray){
 
         if (modSums[modName]) {
             modSums[modName] += modValue;
-            console.log("summed " + modName)
         } else {
             modSums[modName] = modValue;
         }

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { generateItem } from "./functions/items";
 // import { createLevel } from "./functions/levels";
 import { generateGrid } from "./functions/grid";
-
+import Map from "./components/map";
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     createItem(10, 0);
-    createLevel(generateGrid(15, 20));
+    createLevel();
   }, []);
 
   function createItem(difficulty, itemFind) {
@@ -26,8 +26,9 @@ function App() {
   }
 
   function createLevel() {
+    let newGrid = generateGrid()
     let newLevel = {
-      grid: createLevel
+      grid: newGrid
     };
     setLevel(newLevel);
   }
@@ -38,21 +39,8 @@ function App() {
         <div className="header">Mod Type: {items.itemType}</div>
       </header>
       <body className="body">
-        <div>Number of mods: {items.modifiers}</div>
-        {Array.isArray(items.mods) && items.mods.length > 0 ? (
-          items.mods.map((mod, index) => (
-            <div key={index}>
-              <p>
-                <strong>Mod Name:</strong> {mod.modName}
-              </p>
-              <p>
-                <strong>Mod Value:</strong> {mod.modValue}
-              </p>
-            </div>
-          ))
-        ) : (
-          <p>no mods</p>
-        )}
+        {console.log(level.grid, "level grid")}
+        {level.grid && <Map grid={level.grid} />}
       </body>
       <footer className="footer">
         <div>Footer</div>
