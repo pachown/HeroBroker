@@ -1,14 +1,20 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { generateItem } from "./functions/items";
+// import { createLevel } from "./functions/levels";
+import { generateGrid } from "./functions/grid";
+
+
 
 function App() {
   const [items, setItems] = useState({});
+  const [level, setLevel] = useState({});
   // const [heroes, setHeroes] = useState([])
   // const [missions, setMissions] = useState([])
 
   useEffect(() => {
     createItem(10, 0);
+    createLevel(generateGrid(15, 20));
   }, []);
 
   function createItem(difficulty, itemFind) {
@@ -17,7 +23,13 @@ function App() {
       ...items,
       ...newItems,
     }));
+  }
 
+  function createLevel() {
+    let newLevel = {
+      grid: createLevel
+    };
+    setLevel(newLevel);
   }
 
   return (
