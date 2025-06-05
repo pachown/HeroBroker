@@ -1,9 +1,9 @@
-import "./App.css";
+import "../App.css";
 import { useState, useEffect } from "react";
-import { generateItem } from "./functions/items";
+import { generateItem } from "../functions/items";
 // import { createLevel } from "./functions/levels";
-import { generateGrid } from "./functions/grid";
-import Map from "./components/map";
+import { generateGrid } from "../functions/grid";
+import Map from "./Map";
 
 
 function App() {
